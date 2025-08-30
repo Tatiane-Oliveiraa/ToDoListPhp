@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("https://s.tmimgcdn.com/scr/800x500/330200/abstraktnij-nebesno-blakitnij-fon-iz-svitatsa-bilimi-liniami-sucasnih-vektornih-fajliv_330217-original.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#to-do {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #10101a;
+  padding: 18px;
+  border-radius: 8px;
+  width: 430px;
+}
+
+#to-do h1 {
+  color: #e5f9ff;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.to-do-form {
+  display: flex;
+  width: 100%;
+}
+
+.to-do-form input {
+  background-color: transparent;
+  border: none;
+  color: #e5e5e5;
+  font-size: 16px;
+  width: 100%;
+  padding: 4px;
+  border-bottom: 2px solid #ee9ca7;
+}
+
+.to-do-form input:focus-visible {
+  outline: none;
+}
+
+.to-do-form .form-button {
+  border: none;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: #ee9ca7;
+  border-radius: 100%;
+  font-size: 20px;
+  transition: scale 0.5s ease;
+}
+
+.to-do-form .form-button:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+#tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #262626;
+  background-color: #191933;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.task .progress {
+  margin-right: 10px;
+}
+
+.task .progress.done + .task-description {
+  text-decoration: line-through;
+  color: #e5f9ffa7;
+}
+
+.task .task-description {
+  font-size: 16px;
+  color: #fff;
+  padding: 4px 0px;
+  width: 100%;
+}
+
+.task .task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  font-size: 16px;
+}
+
+.action-button.edit-button {
+  color: #6c9bbc;
+}
+
+.action-button.delete-button {
+  color: #ee9ca7;
+}
+
+.hidden {
+  display: none;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: fadeOut 4s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.kanban-column {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.kanban-column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.task-date {
+  font-size: 0.85em;
+  color: #666;
+}
+
+
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.kanban-column {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #10101a;
+  border-bottom: 2px solid #ee9ca7;
+  padding-bottom: 4px;
+}
+
+.task {
+  background-color: #191933;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.task .task-description {
+  font-size: 16px;
+  word-break: break-word;
+}
+
+.task .task-date {
+  font-size: 0.85em;
+  color: #ccc;
+}
+
+.task .task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.task .progress {
+  align-self: flex-start;
+}
+
+.task .progress.done + .task-description {
+  text-decoration: line-through;
+  color: #e5f9ffa7;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100px;
+}
+
+@media screen and (max-width: 480px) {
+  #to-do {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+
+  .kanban-column h2 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #to-do {
+    width: 300px;
+  }
+}
+
+/* Responsivo para telas menores */
+@media screen and (max-width: 768px) {
+  .kanban-board {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
